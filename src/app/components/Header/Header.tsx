@@ -4,12 +4,14 @@ import { Logo } from "../Logo/Logo";
 
 export const Header = () => {
   return (
-    <header className="w-full bg-indigo-400 shadow-lg py-2">
+    <header className="w-full bg-indigo-400 shadow-lg py-2 mb-8">
       <Container className="flex justify-between items-center">
         <Logo />
         <div className="flex gap-4 items-center text-white">
           <p className="">Entre</p>
-          <Button>Cadastre-se</Button>
+          <Button length="small" color="transparent">
+            Cadastre-se
+          </Button>
         </div>
       </Container>
     </header>

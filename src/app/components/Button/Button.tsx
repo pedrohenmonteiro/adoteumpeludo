@@ -2,11 +2,32 @@ import { ButtonHTMLAttributes } from "react";
 
 type ButtonTypes = ButtonHTMLAttributes<HTMLButtonElement>;
 
-const Button = ({ children, ...props }: ButtonTypes) => {
+type ButtonProps = {
+  length?: "small" | "medium" | "full";
+  color?: "yellow" | "transparent";
+} & ButtonTypes;
+
+const Button = ({
+  children,
+  color = "yellow",
+  length = "medium",
+  ...props
+}: ButtonProps) => {
+  const lengthClasses = {
+    small: "py-1 px-4",
+    medium: "py-2 px-6",
+    full: "w-full py-1",
+  };
+
+  const colorClasses =
+    color == "yellow"
+      ? "bg-amber-300 text-amber-800 border-amber-500"
+      : "bg-transparent text-white hover:border-gray-200 hover:text-gray-200 border-[1px]";
+
   return (
     <button
       {...props}
-      className="bg-transparent border-[1px] border-white text-white rounded py-1 px-4 cursor-pointer hover:bg-amber-500 hover:text-amber-800 transition-all hover:border-amber-500"
+      className={`${lengthClasses[length]} ${colorClasses} rounded cursor-pointer transition-all`}
     >
       {children}
     </button>
