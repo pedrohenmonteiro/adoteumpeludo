@@ -6,7 +6,7 @@ const Button = ({ children, ...props }: ButtonTypes) => {
   return (
     <button
       {...props}
-      className="bg-amber-400 text-amber-800  rounded py-2 px-4 cursor-pointer hover:bg-amber-500 hover:text-amber-800 transition-all"
+      className="bg-transparent border-[1px] border-white text-white rounded py-1 px-4 cursor-pointer hover:bg-amber-500 hover:text-amber-800 transition-all hover:border-amber-500"
     >
       {children}
     </button>
